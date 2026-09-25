@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: frontend
+  namespace: asset-tracker-ns
+
+spec:
+  containers:
+  - name: asset-tracker-frontend
+    image: pawarvaishnavi/asser-tracker-frontend
+    ports:
+    - containerPort: 5173

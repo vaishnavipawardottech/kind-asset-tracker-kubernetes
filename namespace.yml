@@ -1,4 +1,4 @@
 kind: Namespace
-api: v1
+apiVersion: v1
 metadata:
-  name: frontend
+  name: asset-tracker-ns
