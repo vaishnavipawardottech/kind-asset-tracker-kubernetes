@@ -1,0 +1,4 @@
+kind: Namespace
+api: v1
+metadata:
+  name: frontend
