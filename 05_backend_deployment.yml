@@ -1,0 +1,40 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: backend-deployment
+  labels:
+    app: asset-tracker-be
+    namespace: asset-tracker-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asset-tracker-be
+  template:
+    metadata:
+      labels:
+        app: asset-tracker-be
+    spec:
+      containers:
+      - name: asset-tracker-backend
+        image: pawarvaishnavi/asset-tracker-backend:multistage
+        ports:
+        - containerPort: 5000
+        env:
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: asset-tracker-secrets
+                key: POSTGRES_PASSWORD
+          - name: POSTGRES_USER
+            valueFrom:
+              configMapKeyRef:
+                name: asset-tracker-configmap
+                key: POSTGRES_USER
+          - name: POSTGRES_DB
+            valueFrom:
+              configMapKeyRef:
+                name: asset-tracker-configmap
+                key: POSTGRES_DB
+
+
