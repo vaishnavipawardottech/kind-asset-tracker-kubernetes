@@ -52,7 +52,7 @@ spec:
               - -c
               - pg_isready -U "$POSTGRES_USER" -d "$POSTGRES_DB"
       volumes:
-        - name: init
+        - name: postgres-init
           configMap:
             name: postgres-init
   volumeClaimTemplates:
