@@ -30,21 +30,21 @@ spec:
         - name: postgres-init
           mountPath: /docker-entrypoint-initdb.d
         env:
-          - name: POSTGRES_USER
+          - name: DB_USER
             valueFrom:
               configMapKeyRef:
                name: asset-tracker-configmap
-               key: POSTGRES_USER
-          - name: POSTGRES_PASSWORD
+               key: DB_USER
+          - name: DB_PASSWORD
             valueFrom:
               secretKeyRef:
                 name: asset-tracker-secrets
-                key: POSTGRES_PASSWORD
-          - name: POSTGRES_DB
+                key: DB_PASSWORD
+          - name: DB_NAME
             valueFrom:
               configMapKeyRef:
                 name: asset-tracker-configmap
-                key: POSTGRES_DB
+                key: DB_NAME
         readinessProbe:
           exec:
             command:
