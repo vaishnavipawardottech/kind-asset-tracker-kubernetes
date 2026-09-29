@@ -21,25 +21,30 @@ spec:
         ports:
         - containerPort: 5000
         env:
-          - name: POSTGRES_PASSWORD
+          - name: DB_PASSWORD
             valueFrom:
               secretKeyRef:
                 name: asset-tracker-secrets
-                key: POSTGRES_PASSWORD
-          - name: POSTGRES_USER
+                key: DB_PASSWORD
+          - name: DB_USER
             valueFrom:
               configMapKeyRef:
                 name: asset-tracker-configmap
-                key: POSTGRES_USER
-          - name: POSTGRES_DB
+                key: DB_USER
+          - name: DB_NAME
             valueFrom:
               configMapKeyRef:
                 name: asset-tracker-configmap
-                key: POSTGRES_DB
-          - name: POSTGRES_HOST
+                key: DB_NAME
+          - name: DB_HOST
             valueFrom:
               configMapKeyRef:
                 name: asset-tracker-configmap
-                key: POSTGRES_HOST
+                key: DB_HOST
+          - name: DB_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: asset-tracker-configmap
+                key: DB_PORT
 
 

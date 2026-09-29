@@ -5,6 +5,7 @@ metadata:
   namespace: asset-tracker-ns
 
 data:
-  POSTGRES_USER: postgres
-  POSTGRES_DB: asset_tracker
-  POSTGRES_HOST: postgres
+  DB_USER: postgres
+  DB_NAME: asset_tracker
+  DB_HOST: postgres
+  DB_PORT: "5432"
