@@ -7,3 +7,4 @@ metadata:
 data:
   POSTGRES_USER: postgres
   POSTGRES_DB: asset_tracker
+  POSTGRES_HOST: postgres

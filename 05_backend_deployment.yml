@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: asset-tracker-backend
-        image: pawarvaishnavi/asset-tracker-backend:multistage
+        image: pawarvaishnavi/asset-tracker-backend:v3
         ports:
         - containerPort: 5000
         env:
@@ -36,5 +36,10 @@ spec:
               configMapKeyRef:
                 name: asset-tracker-configmap
                 key: POSTGRES_DB
+          - name: POSTGRES_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: asset-tracker-configmap
+                key: POSTGRES_HOST
 
 
