@@ -9,3 +9,6 @@ data:
   DB_NAME: asset_tracker
   DB_HOST: postgres
   DB_PORT: "5432"
+
+  POSTGRES_USER: postgres
+  POSTGRES_DB: asset_tracker
